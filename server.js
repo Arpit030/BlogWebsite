@@ -20,6 +20,7 @@ db.on('error', () => console.log("Error connecting to the database"));
 db.once('open', () => console.log("Connected to the database"));
 
 app.set('view engine', 'ejs');
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
